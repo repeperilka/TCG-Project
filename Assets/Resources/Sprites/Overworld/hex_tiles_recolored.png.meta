@@ -1,0 +1,683 @@
+fileFormatVersion: 2
+guid: ee9525f1398f28e418fd98aac8456fb4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hex_tiles_recolored_0
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1206
+        width: 293
+        height: 450
+      alignment: 9
+      pivot: {x: 0.49504635, y: 0.47742406}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1ac0c5d0fafa64796c5a99fafe0b35
+      internalID: 1198279092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_1
+      rect:
+        serializedVersion: 2
+        x: 2158
+        y: 1195
+        width: 288
+        height: 485
+      alignment: 9
+      pivot: {x: 0.48992157, y: 0.4221979}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922eaa737108cab45ac0d454402e73fa
+      internalID: 144374199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_2
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 1645
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17b42722d26a82649a0919d4960a7711
+      internalID: -767812660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_3
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1231
+        width: 287
+        height: 306
+      alignment: 9
+      pivot: {x: 0.4949431, y: 0.67074203}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643abb32398d6e54d803ba44aa58dec1
+      internalID: 1383556942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_4
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1228
+        width: 288
+        height: 307
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6607312}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edecb5f60d1d08b4c8677ad906176f18
+      internalID: 1574483338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_5
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1229
+        width: 337
+        height: 389
+      alignment: 9
+      pivot: {x: 0.46554756, y: 0.50746167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4b282f07557fa4cbcc7b8909bb2bfc
+      internalID: 991275818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_6
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 1228
+        width: 337
+        height: 390
+      alignment: 9
+      pivot: {x: 0.46554756, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4689e52e69b3264f9bf6f41aa08fb39
+      internalID: -1547717922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_7
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 1210
+        width: 287
+        height: 345
+      alignment: 9
+      pivot: {x: 0.48988602, y: 0.596754}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010c167aca47ab548b9879351c79524b
+      internalID: -14091099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_9
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 1203
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb708a17d92f74e45bfade4e50ca37a4
+      internalID: 869947526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 646
+        width: 288
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4907536, y: 0.67025405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a0cf5382761a44cb01b0000e5c89c2
+      internalID: 1399930421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_12
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 643
+        width: 288
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4953768, y: 0.66588855}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fd4d5e57837ba40a874961560e8701
+      internalID: -1051753985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_13
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 644
+        width: 295
+        height: 416
+      alignment: 9
+      pivot: {x: 0.4954865, y: 0.48719728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 122128c0c9d9ea043bf41dc594b3c346
+      internalID: 1049740095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_14
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 643
+        width: 299
+        height: 417
+      alignment: 9
+      pivot: {x: 0.48664084, y: 0.47764912}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be327f9a6b0688489f8961316321ac8
+      internalID: 1277340919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_15
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 644
+        width: 286
+        height: 345
+      alignment: 9
+      pivot: {x: 0.48603362, y: 0.61578035}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb92ad4afeebb0c48a244b2acb8a6648
+      internalID: -211272540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_16
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 646
+        width: 290
+        height: 439
+      alignment: 9
+      pivot: {x: 0.48163474, y: 0.46360442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 078d0a20ce29a3246ab337b8671d515c
+      internalID: -499492620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_17
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 646
+        width: 292
+        height: 439
+      alignment: 9
+      pivot: {x: 0.5099404, y: 0.46363473}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9806428ba9490dc4ab979fa0c53247e0
+      internalID: 619132569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_18
+      rect:
+        serializedVersion: 2
+        x: 2446
+        y: 617
+        width: 293
+        height: 506
+      alignment: 9
+      pivot: {x: 0.5049536, y: 0.43116343}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df47c95129773c54e842ff624cd0b6e9
+      internalID: 1276899337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_23
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 40
+        width: 289
+        height: 303
+      alignment: 9
+      pivot: {x: 0.49999994, y: 0.6494063}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf85a84f5c3c7845a6340061047cd3f
+      internalID: 1604521109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_24
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 39
+        width: 289
+        height: 304
+      alignment: 9
+      pivot: {x: 0.4953928, y: 0.65329456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74bb838d788cfce438a81b42c0b1a6ea
+      internalID: 358825775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_25
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 39
+        width: 289
+        height: 304
+      alignment: 9
+      pivot: {x: 0.4907856, y: 0.65329456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f3a3fa2fcc08346ae077a9f9f2d6b2
+      internalID: 570996749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_26
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 36
+        width: 302
+        height: 375
+      alignment: 9
+      pivot: {x: 0.52645326, y: 0.53905654}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f99f05e21773c3349a9f2955d03e313b
+      internalID: 1872702778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_27
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 39
+        width: 306
+        height: 376
+      alignment: 9
+      pivot: {x: 0.51305395, y: 0.5106234}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8a0a42b80ac1a44b96d3dd2f29d382
+      internalID: 438588193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_29
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 39
+        width: 286
+        height: 345
+      alignment: 9
+      pivot: {x: 0.49534467, y: 0.5964836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a8cb16358cb34438f8a4c84b813155
+      internalID: 2098872719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_30
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 42
+        width: 293
+        height: 437
+      alignment: 9
+      pivot: {x: 0.4909118, y: 0.42687556}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82dc6051b0b82d34ba3fadd351edda69
+      internalID: 1283258249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_tiles_recolored_31
+      rect:
+        serializedVersion: 2
+        x: 2458
+        y: 29
+        width: 297
+        height: 542
+      alignment: 9
+      pivot: {x: 0.47758427, y: 0.3894533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a5392758437d564c934a35463abb5db
+      internalID: -401768600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hex_tiles_recolored_4: 1574483338
+      hex_tiles_recolored_0: 1198279092
+      hex_tiles_recolored_21: -1934037012
+      hex_tiles_recolored_12: -1051753985
+      hex_tiles_recolored_33: -940956344
+      hex_tiles_recolored_28: -1698685484
+      hex_tiles_recolored_1: 144374199
+      hex_tiles_recolored_23: 1604521109
+      hex_tiles_recolored_16: -499492620
+      hex_tiles_recolored_34: -1885110997
+      hex_tiles_recolored_29: 2098872719
+      hex_tiles_recolored_26: 1872702778
+      hex_tiles_recolored_17: 619132569
+      hex_tiles_recolored_22: 2063784646
+      hex_tiles_recolored_24: 358825775
+      hex_tiles_recolored_5: 991275818
+      hex_tiles_recolored_3: 1383556942
+      hex_tiles_recolored_13: 1049740095
+      hex_tiles_recolored_27: 438588193
+      hex_tiles_recolored_25: 570996749
+      hex_tiles_recolored_2: -767812660
+      hex_tiles_recolored_32: -1404038466
+      hex_tiles_recolored_10: 1399930421
+      hex_tiles_recolored_9: 869947526
+      hex_tiles_recolored_14: 1277340919
+      hex_tiles_recolored_30: 1283258249
+      hex_tiles_recolored_20: 1959297508
+      hex_tiles_recolored_18: 1276899337
+      hex_tiles_recolored_11: 1820429600
+      hex_tiles_recolored_15: -211272540
+      hex_tiles_recolored_7: -14091099
+      hex_tiles_recolored_31: -401768600
+      hex_tiles_recolored_6: -1547717922
+      hex_tiles_recolored_8: 180384864
+      hex_tiles_recolored_19: -1234934252
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

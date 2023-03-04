@@ -1,0 +1,313 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6960545800539085129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6960545800539085141}
+  - component: {fileID: 6960545800539085140}
+  - component: {fileID: 6960545800539085143}
+  - component: {fileID: 6960545800539085142}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6960545800539085141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960545800539085129}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2381845, y: 1.5715232, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6960545800539085140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960545800539085129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443ae6884126847409e4f3f9833be515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomEncounterPool:
+    biome: 4
+    commonIDs:
+    - cat
+    uncommonIDs:
+    - dog
+    rareIDs:
+    - battle_bear
+    mythicIDs:
+    - dragon
+  turnCount: 0
+  sceneController: {fileID: 6960545800539085142}
+  randomEncounterCapture: {fileID: 0}
+--- !u!114 &6960545800539085143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960545800539085129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4054b523cf3ffbb4ba530d8a26b36447, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  creatures:
+  - cardName: Cat
+    cardID: cat
+    cost: 1
+    price: 100
+    rarity: 0
+    type: 0
+    habilities:
+    - name: Swiftness
+      cost: 0
+      description: Move cat to another empty position.
+      effectID: effect_move_empty
+      trigger: Active
+      goesToStack: 0
+    sprite: {fileID: 21300000, guid: c94a8d3a11c47404f93a652a994715b1, type: 3}
+    possibleMorphs:
+    - name: +1 Defense
+      cost: 0
+      description: +1 Defense.
+      effectID: self_defense_add 1
+      trigger: OnSetup
+      goesToStack: 0
+    - name: Stray
+      cost: 0
+      description: Cat costs 1 less.
+      effectID: self_reduce_cost 1
+      trigger: OnSetup
+      goesToStack: 0
+    - name: +1 Attack
+      cost: 0
+      description: +1 Attack.
+      effectID: self_attack_add 1
+      trigger: OnSetup
+      goesToStack: 0
+    attack: 0
+    defense: 1
+  - cardName: Dog
+    cardID: dog
+    cost: 1
+    price: 150
+    rarity: 1
+    type: 0
+    habilities:
+    - name: Add Defense
+      cost: 0
+      description: Whenever Dog enters the battlefield, target creature gets +1 defense.
+      effectID: effect_defense_add 1
+      trigger: OnThisEnter
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: dfa21afae81de0e47bde5068c35763e3, type: 3}
+    possibleMorphs:
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: +1 Attack
+      cost: 0
+      description: +1 Attack
+      effectID: self_attack_add 1
+      trigger: OnSetup
+      goesToStack: 1
+    - name: Helping Paw
+      cost: 3
+      description: '3: Draw a card'
+      effectID: effect_draw 1
+      trigger: Active
+      goesToStack: 1
+    attack: 1
+    defense: 1
+  - cardName: Battle Bear
+    cardID: battle_bear
+    cost: 3
+    price: 200
+    rarity: 2
+    type: 0
+    habilities: []
+    sprite: {fileID: 21300000, guid: ff9dc2059fbdead4daf252d97c110cb4, type: 3}
+    possibleMorphs:
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 0
+    - name: +1 Attack
+      cost: 0
+      description: +1 Attack
+      effectID: self_attack_add 1
+      trigger: OnSetup
+      goesToStack: 0
+    - name: +2 Defense
+      cost: 0
+      description: +2 Defense
+      effectID: self_defense_add 2
+      trigger: OnSetup
+      goesToStack: 0
+    attack: 4
+    defense: 3
+  - cardName: Dragon
+    cardID: dragon
+    cost: 6
+    price: 300
+    rarity: 3
+    type: 0
+    habilities:
+    - name: Draw On Enter
+      cost: 0
+      description: Whenever Dragon enters, draw a card
+      effectID: effect_draw 1
+      trigger: OnThisEnter
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: d9e2088603eeb3d439a2777a3c6572cf, type: 3}
+    possibleMorphs:
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: Treasure Hoard
+      cost: 0
+      description: Whenever Dragon enters, it gets +1 Attack for each 10.000 gold
+        you own.
+      effectID: effect_dragon_morph_3
+      trigger: OnThisEnter
+      goesToStack: 1
+    attack: 5
+    defense: 4
+  - cardName: Desert Critters
+    cardID: desert_critters
+    cost: 3
+    price: 200
+    rarity: 1
+    type: 0
+    habilities:
+    - name: Regroup
+      cost: 0
+      description: Whenever Desert Critters enters, all other Desert Critters you
+        controll get +1 Attack and +1 Defense for 1 turn.
+      effectID: effect_desert_critters_buff
+      trigger: OnThisEnter
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: c155024dc0448af49896a69f668c1fd4, type: 3}
+    possibleMorphs:
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: Treasure Hoard
+      cost: 0
+      description: Whenever Dragon enters, it gets +1 Attack for each 10.000 gold
+        you own.
+      effectID: effect_dragon_morph_3
+      trigger: OnThisEnter
+      goesToStack: 1
+    attack: 1
+    defense: 1
+  spells:
+  - cardName: Knoledge
+    cardID: knoledge
+    cost: 1
+    price: 150
+    rarity: 0
+    type: 1
+    habilities:
+    - name: Knoledge
+      cost: 0
+      description: Draw 1 card.
+      effectID: effect_draw 1
+      trigger: 
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: c01b7f836b4d2054ea9b4c93475ccd38, type: 3}
+  - cardName: Fireball
+    cardID: fireball
+    cost: 1
+    price: 150
+    rarity: 0
+    type: 1
+    habilities:
+    - name: Fireball
+      cost: 0
+      description: Deal 3 damage.
+      effectID: effect_damage 3
+      trigger: 
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: de7c6c8135694eb4db418a45916a6c27, type: 3}
+  - cardName: Trap
+    cardID: trap
+    cost: 1
+    price: 300
+    rarity: 1
+    type: 1
+    habilities:
+    - name: Trap
+      cost: 0
+      description: Capture target creature whose attack is lesser than 2
+      effectID: effect_capture_attack 4
+      trigger: 
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: b5fa6d04760e434439229ca61e7c341e, type: 3}
+--- !u!114 &6960545800539085142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6960545800539085129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430ee7b37272fcd4ab46276c3e68c60a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

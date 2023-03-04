@@ -1,0 +1,746 @@
+fileFormatVersion: 2
+guid: c4ebcdc0151e0bb4f8a8fa2746ccaf22
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: forest_mountain
+      rect:
+        serializedVersion: 2
+        x: 1802
+        y: 1206
+        width: 293
+        height: 450
+      alignment: 9
+      pivot: {x: 0.48722762, y: 0.4474265}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2264d488d26e57c43af58a3a3eeaeea8
+      internalID: 1533219083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_city
+      rect:
+        serializedVersion: 2
+        x: 2158
+        y: 1195
+        width: 288
+        height: 485
+      alignment: 9
+      pivot: {x: 0.49353197, y: 0.41828513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425f73e6fe3fd92478a834b4b585c6ac
+      internalID: 1567713475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_files_hd_2
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 1645
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a9841543479554bbea8124bf341ecc
+      internalID: 454044583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_plains
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1231
+        width: 287
+        height: 306
+      alignment: 9
+      pivot: {x: 0.48150057, y: 0.66811836}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9f97f183a0a494aa7998da9a807920
+      internalID: 1846745282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_plains_1
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 1228
+        width: 288
+        height: 307
+      alignment: 9
+      pivot: {x: 0.48890835, y: 0.6657854}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2034b2b4e19e761408170d5cd5e98cd5
+      internalID: 1962663289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_forest
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 1229
+        width: 337
+        height: 389
+      alignment: 9
+      pivot: {x: 0.4665866, y: 0.517698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcccfae7de42cd4997cf36e3dff2199
+      internalID: 763323361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_forest_1
+      rect:
+        serializedVersion: 2
+        x: 1049
+        y: 1228
+        width: 337
+        height: 390
+      alignment: 9
+      pivot: {x: 0.47681388, y: 0.5142387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfe68ac8e6a926f4f8766ec778ced082
+      internalID: 1060831798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: forest_hills
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 1210
+        width: 287
+        height: 345
+      alignment: 9
+      pivot: {x: 0.4926894, y: 0.6239222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eab4ab192a713ad41a7ece33f5462184
+      internalID: 590800990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_files_hd_9
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 1203
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b050a34abc036aa44b774ea9e045e577
+      internalID: 552140110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_plains
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 646
+        width: 288
+        height: 305
+      alignment: 9
+      pivot: {x: 0.4815648, y: 0.6458172}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a563bfa9df26894f8df42ce4792b10d
+      internalID: 488170819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_files_hd_11
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 940
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1761bfd622a9349bbcd80be8e00535
+      internalID: -118962094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_plains_1
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 643
+        width: 288
+        height: 305
+      alignment: 9
+      pivot: {x: 0.49733713, y: 0.6581415}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da6d903bc25fd347b85c446ee505bcd
+      internalID: -2071085745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_forest
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 643
+        width: 295
+        height: 416
+      alignment: 9
+      pivot: {x: 0.49023107, y: 0.47777075}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e4ee00359a28794db0217c096ed3292
+      internalID: 1193329452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_forest_1
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 643
+        width: 299
+        height: 417
+      alignment: 9
+      pivot: {x: 0.4992688, y: 0.4746309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3afff0e8f7eba746b666f26086ba341
+      internalID: 50492937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_hill
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 644
+        width: 286
+        height: 345
+      alignment: 9
+      pivot: {x: 0.48499858, y: 0.6046252}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c444a9424144a4444a3df7d2e2af7595
+      internalID: 409694002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_mountain
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 646
+        width: 290
+        height: 439
+      alignment: 9
+      pivot: {x: 0.4927646, y: 0.45271137}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c9ba12b2b4615498fecc85d5e50005
+      internalID: 2035898030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_mountain_1
+      rect:
+        serializedVersion: 2
+        x: 2113
+        y: 646
+        width: 292
+        height: 439
+      alignment: 9
+      pivot: {x: 0.5000577, y: 0.46127382}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8864e610a6004634484001662c184a35
+      internalID: -1696008636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tundra_city
+      rect:
+        serializedVersion: 2
+        x: 2446
+        y: 617
+        width: 293
+        height: 506
+      alignment: 9
+      pivot: {x: 0.4771791, y: 0.42378977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf66716aaa7784743a89d9b4a0b4957b
+      internalID: 1686810624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_files_hd_19
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 655
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a33ef710fc5cc449349ad56f6bc631
+      internalID: 635726978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hex_files_hd_21
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 644
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f816cc8d3dc72ee4b9c904f115d42a2b
+      internalID: -1727956194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_plain
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 40
+        width: 289
+        height: 303
+      alignment: 9
+      pivot: {x: 0.49720478, y: 0.6559662}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939ebe4856c4d6341941c2a1a6b8b67c
+      internalID: 769363639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_plain_1
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 39
+        width: 289
+        height: 304
+      alignment: 9
+      pivot: {x: 0.50181204, y: 0.653635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff249a4b47016834f8fbb144ef6c0939
+      internalID: 1236742330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_plain_2
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 39
+        width: 289
+        height: 304
+      alignment: 9
+      pivot: {x: 0.49355394, y: 0.63429725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e2157edaa8dec468e2e0c483a0a128
+      internalID: -101619857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_forest
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 36
+        width: 302
+        height: 375
+      alignment: 9
+      pivot: {x: 0.5256089, y: 0.53718513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b884950147526954ba094ba6b12da0cc
+      internalID: 997757599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_forest_1
+      rect:
+        serializedVersion: 2
+        x: 1378
+        y: 39
+        width: 306
+        height: 376
+      alignment: 9
+      pivot: {x: 0.5174744, y: 0.5243918}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97a8b544f93df24aaedfde45ee0f5b5
+      internalID: 2010098565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_hill
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 39
+        width: 286
+        height: 345
+      alignment: 9
+      pivot: {x: 0.503587, y: 0.60420966}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ee2f449b2e0964cb12dc0f1b3361d2
+      internalID: -1146447315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_mountain
+      rect:
+        serializedVersion: 2
+        x: 2100
+        y: 42
+        width: 293
+        height: 437
+      alignment: 9
+      pivot: {x: 0.4817236, y: 0.43469623}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef87859f7a23fc444809c99c54c41720
+      internalID: 1728449648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: desert_city
+      rect:
+        serializedVersion: 2
+        x: 2458
+        y: 29
+        width: 297
+        height: 542
+      alignment: 9
+      pivot: {x: 0.4935578, y: 0.39723969}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad1c52c174434641bdb7db9c5e6397d
+      internalID: 1146655135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      hex_files_hd_28: 1959254152
+      desert_plain: 769363639
+      hex_files_hd_33: 294662131
+      forest_forest: 763323361
+      hex_files_hd_34: -1546816519
+      forest_hills: 590800990
+      forest_mountain: 1533219083
+      tundra_city: 1686810624
+      desert_forest: 997757599
+      tundra_hill: 409694002
+      desert_hill: -1146447315
+      tundra_plains: 488170819
+      tundra_plains_1: -2071085745
+      hex_files_hd_2: 454044583
+      desert_mountain: 1728449648
+      hex_files_hd_21: -1727956194
+      desert_city: 1146655135
+      desert_plain_2: -101619857
+      forest_forest_1: 1060831798
+      desert_plain_1: 1236742330
+      hex_files_hd_22: 1642717327
+      forest_plains: 1846745282
+      tundra_forest_1: 50492937
+      tundra_mountain_1: -1696008636
+      hex_files_hd_8: -130691908
+      hex_files_hd_32: -386256340
+      desert_forest_1: 2010098565
+      tundra_mountain: 2035898030
+      tundra_forest: 1193329452
+      hex_files_hd_19: 635726978
+      hex_files_hd_20: 621246486
+      hex_files_hd_11: -118962094
+      forest_city: 1567713475
+      hex_files_hd_9: 552140110
+      forest_plains_1: 1962663289
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

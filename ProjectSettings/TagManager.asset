@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Slot
+  - MapTile
+  - DeckPanel
+  - InventoryPanel
+  - SellPanel
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Board
+    uniqueID: 2698621707
+    locked: 0
+  - name: Game
+    uniqueID: 2868589491
+    locked: 0
+  - name: Hand
+    uniqueID: 1377885863
+    locked: 0
+  - name: Overlay
+    uniqueID: 3446961261
+    locked: 0
+  - name: Outside
+    uniqueID: 2122177569
+    locked: 0
