@@ -113,23 +113,9 @@ public class MatchController : MonoBehaviour
         }
         transitionLight.intensity = .8f;
 
-        musicClip = Resources.Load<AudioClip>("Audio/battle_music");
-        StartCoroutine(MusicFadeIn());
 
         gameCycleRoutine = GameCycle();
         StartCoroutine(gameCycleRoutine);
-    }
-    public IEnumerator MusicFadeIn()
-    {
-        musicSource.clip = musicClip;
-        musicSource.volume = 0;
-        musicSource.Play();
-        while(musicSource.volume < 1f)
-        {
-            musicSource.volume += Time.deltaTime * .8f;
-            yield return 0;
-        }
-        musicSource.volume = 1f;
     }
     public IEnumerator GameCycle()
     {

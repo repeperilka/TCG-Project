@@ -16,11 +16,11 @@ public class MainMenuAudio : MonoBehaviour
 
     private void Start()
     {
-        clipOnButtonHover = Resources.Load<AudioClip>("Audio/button_hover");
-        clipButtonCancel = Resources.Load<AudioClip>("Audio/button_cancel");
-        clipButtonClick = Resources.Load<AudioClip>("Audio/button_click");
-        clipDeleteSave = Resources.Load<AudioClip>("Audio/delete_save");
-        clipStartingGame = Resources.Load<AudioClip>("Audio/starting_game");
+        clipOnButtonHover = Resources.Load<AudioClip>("Audio/mainmenu/button_hover");
+        clipButtonCancel = Resources.Load<AudioClip>("Audio/mainmenu/button_cancel");
+        clipButtonClick = Resources.Load<AudioClip>("Audio/mainmenu/button_click");
+        clipDeleteSave = Resources.Load<AudioClip>("Audio/mainmenu/delete_save");
+        clipStartingGame = Resources.Load<AudioClip>("Audio/mainmenu/starting_game");
     }
     public void OnButtonHover(EventTrigger _button)
     {

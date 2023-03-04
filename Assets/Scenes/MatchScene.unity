@@ -1478,8 +1478,8 @@ MonoBehaviour:
   stack: []
   capturedCards: []
   earnedGold: 0
-  musicClip: {fileID: 0}
-  encounterClip: {fileID: 0}
+  musicClip: {fileID: 8300000, guid: 31d0021543fb63940ac5cfd3374a20f9, type: 3}
+  encounterClip: {fileID: 8300000, guid: ed41fb04b17569245bba243ba63103ee, type: 3}
   source1: {fileID: 258709999}
   source2: {fileID: 258709998}
   source3: {fileID: 258709997}
@@ -1885,11 +1885,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3663947117006461246, guid: e9bd184dadfbb0b4ab768427942c959b, type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 31d0021543fb63940ac5cfd3374a20f9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
