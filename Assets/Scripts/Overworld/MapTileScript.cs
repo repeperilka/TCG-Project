@@ -21,12 +21,13 @@ public class MapTileScript : MonoBehaviour
         index = _index;
         gameObject.name = _index.x + ":" + _index.y;
     }
-    public void SetSprite(TileBiomeData _data)
+    public void SetSprite(TileBiomeData _data, Color _colorDistance)
     {
         if(_data.biomeType != BiomeType.Ocean)
         {
             thisCollider.enabled = true;
         }
+        rend.color = _colorDistance;
         rend.sprite = _data.sprite;
         biome = _data.biomeType;
     }

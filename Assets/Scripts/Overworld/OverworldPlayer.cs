@@ -19,7 +19,9 @@ public class OverworldPlayer : MonoBehaviour
     }
     private void Update()
     {
-        if(path.currentPoint != path.points.Count)
+        if (!OverworldController.Instance.active)
+            return;
+        if (path.currentPoint != path.points.Count)
         {
             SetWalking(true);
             transform.position = Vector3.MoveTowards(transform.position, path.points[path.currentPoint].transform.position, speed * Time.deltaTime);
@@ -41,6 +43,10 @@ public class OverworldPlayer : MonoBehaviour
                 if(Random.value < .1f && (currentTile.biome != BiomeType.Town && currentTile.biome != BiomeType.Ocean) && !removeEncounters)
                 {
                     OverworldController.Instance.RandomEncounter(currentTile.biome, 5);
+                }
+                if(currentTile.index.x == OverworldController.Instance.map.verminTile.x && currentTile.index.y == OverworldController.Instance.map.verminTile.y)
+                {
+                    OverworldController.Instance.BossFight("vermin");
                 }
                 if(path.currentPoint == path.points.Count && currentTile.biome == BiomeType.Town)
                 {

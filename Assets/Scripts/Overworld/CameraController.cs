@@ -18,6 +18,8 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!OverworldController.Instance.active)
+            return;
         if (Input.GetMouseButton(2))
         {
             transform.Translate(new Vector3(-Input.GetAxis("Mouse X"), -Input.GetAxis("Mouse Y"), 0) * sensitivity * (cam.orthographicSize / 26f) * Time.deltaTime);

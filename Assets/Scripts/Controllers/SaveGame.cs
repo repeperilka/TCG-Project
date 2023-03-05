@@ -81,7 +81,7 @@ public static class SaveGame
         File.Delete(Application.persistentDataPath + "/Saves/" + _saveIndex + ".sav");
         UpdateSaveData();
     }
-    public static void NewGame(int _saveIndex, string _saveName)
+    public static void NewGame(int _saveIndex, string _saveName, bool _skipLore, bool _skipTutorial)
     {
         currentSave = new GameSave();
         currentSave.newTerrain = true;
@@ -94,35 +94,30 @@ public static class SaveGame
         currentSave.playerInventory = new List<CardInstance>();
         currentSave.playerPosition = new Vector2Int(50, 50);
 
-        AddCardToDeck(new CardInstance("dog"));
-        AddCardToDeck(new CardInstance("dog"));
-        AddCardToDeck(new CardInstance("dog"));
-        AddCardToDeck(new CardInstance("dog"));
-        AddCardToDeck(new CardInstance("cat"));
-        AddCardToDeck(new CardInstance("cat"));
-        AddCardToDeck(new CardInstance("cat"));
-        AddCardToDeck(new CardInstance("cat"));
-        AddCardToDeck(new CardInstance("battle_bear"));
-        AddCardToDeck(new CardInstance("battle_bear"));
-        AddCardToDeck(new CardInstance("battle_bear"));
-        AddCardToDeck(new CardInstance("dragon"));
+        currentSave.tutorials = new bool[] { _skipLore, _skipTutorial, _skipTutorial, _skipTutorial, _skipTutorial };
+
+        AddCardToDeck(new CardInstance("dog", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("dog", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("dog", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("dog", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("cat", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("cat", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("cat", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("cat", CardDictionary.GetCardID(), 0));
+        AddCardToDeck(new CardInstance("battle_bear", CardDictionary.GetCardID(), 0));
         AddCardToDeck(new CardInstance("knoledge"));
         AddCardToDeck(new CardInstance("knoledge"));
-        AddCardToDeck(new CardInstance("knoledge"));
         AddCardToDeck(new CardInstance("fireball"));
         AddCardToDeck(new CardInstance("fireball"));
         AddCardToDeck(new CardInstance("fireball"));
-        AddCardToDeck(new CardInstance("fireball"));
-        AddCardToDeck(new CardInstance("trap"));
-        AddCardToDeck(new CardInstance("trap"));
-        AddCardToDeck(new CardInstance("trap"));
-        AddCardToDeck(new CardInstance("trap"));
+        AddCardToDeck(new CardInstance("capture_spirit"));
+
 
 
         saveIndex = _saveIndex;
         Save(_saveIndex);
         PlayerPrefs.SetInt("lastLoaded", _saveIndex);
-        GameController.Instance.sceneController.LoadScene(1);
+        GameController.Instance.sceneController.LoadScene(3);
     }
     public static void Save(int _saveIndex)
     {
@@ -192,7 +187,7 @@ public class GameSave
     public float timePlayed { get { return floatTimePlayed; } set { floatTimePlayed = value; timeConverted = GetTimeString(floatTimePlayed); } }
 
     public bool newTerrain;
-    public bool tutorial;
+    public bool[] tutorials; //[0] lore, [1] overworld, [2] towns, [3] deckbuilding, [4] matches
 
     public int[] playerHP;
     public int worldSeed;
@@ -201,6 +196,7 @@ public class GameSave
     public List<CardInstance> playerDeck;
     public List<CardInstance> playerInventory;
     public Vector2Int playerPosition;
+    public Vector2Int lastTown;
     public List<MapTown> towns;
 
     public GameSave()
@@ -214,14 +210,15 @@ public class GameSave
         gold = 0;
         worldTime = 0;
         newTerrain = true;
-        tutorial = true;
+        tutorials = new bool[5];
         playerDeck = new List<CardInstance>();
         playerInventory = new List<CardInstance>();
         playerPosition = Vector2Int.one;
+        lastTown = Vector2Int.one;
         towns = new List<MapTown>();
     }
-    public GameSave(string _saveName, int _saveIndex, int _timePlayed, int[] _playerHP, int _worldSeed, int _gold, float _worldTime, bool _newTerrain, bool _tutorial, List<CardInstance> _playerDeck, List<CardInstance> _playerInventory,
-        Vector2Int _playerPosition, List<MapTown> _towns)
+    public GameSave(string _saveName, int _saveIndex, int _timePlayed, int[] _playerHP, int _worldSeed, int _gold, float _worldTime, bool _newTerrain, bool[] _tutorial, List<CardInstance> _playerDeck, List<CardInstance> _playerInventory,
+        Vector2Int _playerPosition, Vector2Int _lastTown, List<MapTown> _towns)
     {
         saveName = _saveName;
         saveIndex = _saveIndex;
@@ -232,9 +229,10 @@ public class GameSave
         worldTime = _worldTime;
         playerDeck = _playerDeck;
         newTerrain = _newTerrain;
-        tutorial = _tutorial;
+        tutorials = _tutorial;
         playerInventory = _playerInventory;
         playerPosition = _playerPosition;
+        lastTown = _lastTown;
         towns = _towns;
     }
     public static string GetTimeString(float _seconds)

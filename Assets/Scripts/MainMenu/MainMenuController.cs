@@ -23,6 +23,8 @@ public class MainMenuController : MonoBehaviour
 
     GameObject newGameNamePanel;
     TMP_InputField newGameNameField;
+    public Toggle skipLoreToggle;
+    public Toggle skipTutorialToggle;
     GameObject noNameWarning;
 
     GameObject deleteGamePanel;
@@ -248,19 +250,19 @@ public class MainMenuController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(LoadGameTransition(newGameIndex, newGameNameField.text));
+            StartCoroutine(LoadGameTransition(newGameIndex, newGameNameField.text, skipLoreToggle.isOn, skipTutorialToggle.isOn));
         }
     }
     public void LoadGame()
     {
-        StartCoroutine(LoadGameTransition(newGameIndex, ""));
+        StartCoroutine(LoadGameTransition(newGameIndex, "", false, false));
     }
     public void DeleteGame()
     {
         SaveGame.DeleteGame(newGameIndex);
         SetMode(mode);
     }
-    public IEnumerator LoadGameTransition(int _gameIndex, string _gameName)
+    public IEnumerator LoadGameTransition(int _gameIndex, string _gameName, bool _skipLore, bool _skipTutorial)
     {
         transitionPanel.gameObject.SetActive(true);
         deleteGamePanel.gameObject.SetActive(false);
@@ -275,7 +277,7 @@ public class MainMenuController : MonoBehaviour
 
         if(_gameName != "")
         {
-            SaveGame.NewGame(_gameIndex, _gameName);
+            SaveGame.NewGame(_gameIndex, _gameName, _skipLore, _skipTutorial);
         }
         else
         {

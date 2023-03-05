@@ -16,6 +16,8 @@ public class MapGenerator : MonoBehaviour
     const float voronoiPerlinCut = .4f;
     const float voronoiEdgeCut = 0.6f;
     public bool updateVoronoi;
+    float maxDistance;
+    public Vector2Int verminTile;
 
 
     public TileMap map;
@@ -28,7 +30,7 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
-
+        maxDistance = Vector2.Distance(new Vector2(0, 0), new Vector2(99f, 99f));
     }
 
     private void Update()
@@ -111,7 +113,9 @@ public class MapGenerator : MonoBehaviour
     {
         seed = _seed;
         Random.InitState(_seed);
+
         yield return StartCoroutine(CreateVoronoi());
+        SetVerminPlace();
         yield return StartCoroutine(UpdateMap());
 
         if (SaveGame.currentSave.newTerrain)
@@ -200,9 +204,35 @@ public class MapGenerator : MonoBehaviour
         {
             for (int x = 0; x < mapSize; x++)
             {
-                map[x, y].SetSprite(GetHeight(x, y));
+                map[x, y].SetSprite(GetHeight(x, y), DistanceColor(new Vector2Int(x, y)));
             }
             yield return 0;
+        }
+    }
+
+    //sets the place of the vermin
+    public void SetVerminPlace()
+    {
+        verminTile = Vector2Int.zero;
+        bool found = false;
+        while (!found)
+        {
+            verminTile = new Vector2Int(Random.Range(1, 99), Random.Range(1, 99));
+            TileBiomeData data = GetHeight(verminTile.x, verminTile.y);
+            found = data.biomeType != BiomeType.Ocean && data.biomeType != BiomeType.Town;
+        }
+    }
+    //gets color depending on distance from vermin
+    public Color DistanceColor(Vector2 _index)
+    {
+        float dist = Vector2.Distance(_index, verminTile);
+        if(dist > 10f)
+        {
+            return Color.white;
+        }
+        else
+        {
+            return Color.Lerp(Color.black, Color.white, Mathf.Clamp(dist / 10f + .4f, .2f, 1f));
         }
     }
 
@@ -214,6 +244,8 @@ public class MapGenerator : MonoBehaviour
         while(spawnedTowns < _townAmount)
         {
             Vector2Int index = new Vector2Int(Random.Range(1, mapSize - 2), Random.Range(1, mapSize - 2));
+            if (index.x == verminTile.x && index.y == verminTile.y)
+                continue;
             if(map[index.x, index.y].biome != BiomeType.Ocean && map[index.x, index.y].biome != BiomeType.Town)
             {
                 MapTileScript tile = map[index.x, index.y];
@@ -239,11 +271,13 @@ public class MapGenerator : MonoBehaviour
                     biomePools = SubBiomeType.Desert;
                 }
 
-                tile.SetSprite(new TileBiomeData(BiomeType.Town, townSprite));
+                tile.SetSprite(new TileBiomeData(BiomeType.Town, townSprite), DistanceColor(tile.index));
                 SaveGame.currentSave.towns.Add(new MapTown(townName + "_Town", tile.index, biomePools));
                 spawnedTowns++;
             }
         }
+        SaveGame.currentSave.lastTown = SaveGame.currentSave.towns[Random.Range(0, _townAmount)].index;
+        SaveGame.currentSave.playerPosition = SaveGame.currentSave.lastTown;
         SaveGame.Save();
         UpdateTowns();
     }
@@ -266,7 +300,7 @@ public class MapGenerator : MonoBehaviour
                     townSprite = townSprites[2];
                     break;
             }
-            townTile.SetSprite(new TileBiomeData(BiomeType.Town, townSprite));
+            townTile.SetSprite(new TileBiomeData(BiomeType.Town, townSprite), DistanceColor(townTile.index));
         }
     }
 

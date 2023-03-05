@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
 
     public CreaturePool randomEncounterPool;
+    public CardInstance bossFight;
     public int turnCount;
 
     public SceneController sceneController;

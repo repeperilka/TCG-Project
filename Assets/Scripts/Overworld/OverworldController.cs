@@ -23,6 +23,14 @@ public class OverworldController : MonoBehaviour
 
     public Camera renderCam;
     public AudioSource musicSource;
+    public CameraController playerCamera;
+    public ConversationTextScript druidConver;
+
+    public TutorialScreen overworldTutorial;
+    public TutorialScreen deckBuildingTutorial;
+
+    [HideInInspector]
+    public bool active = false;
 
     #region Singleton
     public static OverworldController Instance { get; private set; }
@@ -47,6 +55,9 @@ public class OverworldController : MonoBehaviour
 
     private void Update()
     {
+        if (!active)
+            return;
+
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, tileMask);
@@ -54,6 +65,10 @@ public class OverworldController : MonoBehaviour
             {
                 player.path = GetPath(hit.collider.GetComponent<MapTileScript>());
             }
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            playerCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -10f);
         }
     }
 
@@ -84,8 +99,69 @@ public class OverworldController : MonoBehaviour
         loadScreen.CrossFadeAlpha(0, 1f, false);
         yield return new WaitForSeconds(1f);
         loadScreen.raycastTarget = false;
+        if (!SaveGame.currentSave.tutorials[0])
+        {
+            druidConver.gameObject.SetActive(true);
+            yield return StartCoroutine(Tutorial());
+        }
+        if (!SaveGame.currentSave.tutorials[1])
+        {
+            overworldTutorial.gameObject.SetActive(true);
+            while (overworldTutorial.gameObject.activeInHierarchy)
+            {
+                yield return 0;
+            }
+        }
+        active = true;
     }
 
+    public IEnumerator Tutorial()
+    {
+        yield return StartCoroutine(druidConver.ConversationRoutine(new string[] { 
+        "Oh, hola amigo!",
+        "Bienvenido al mundo de los vivos",
+        "Tranquilízate, sé que hay mucho que procesar sobre todo esto",
+        "Por eso, permiteme que te explique",
+        "Tú, amigo mío, eres un Centinela, al igual que yo",
+        "Fuimos creados por nuestra diosa Gaïa, con el propósito de mantener el equilibrio en estas tierras",
+        "...",
+        "Ahora que lo pienso",
+        "Gaïa no ha necesitado dar a luz a ningún otro centinela en siglos",
+        "...",
+        "Oh oh, quizas tengamos un problema serio entre manos",
+        "Cierto es que he estado escuchando rumores que venían de tierras lejanas",
+        "Rumores que hablaban de cultivos muriendo sin razón aparente y animales migrando antes de lo esperado",
+        "Hmm, de ser así, no tenemos tiempo que perder",
+        }));
+        MapTileScript verminTile = map.map[map.verminTile.x, map.verminTile.y];
+        while(Vector2.Distance(verminTile.transform.position, playerCamera.transform.position) > .1f)
+        {
+            playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, new Vector3(verminTile.transform.position.x, verminTile.transform.position.y, -10f), 
+                Time.deltaTime * 10f);
+            yield return 0;
+        }
+        yield return StartCoroutine(druidConver.ConversationRoutine(new string[] {
+        "Este es el lugar",
+        "No sé qué es lo que encontrarás ahí, pero estoy seguro que es la razón por la que Gaïa te dio vida",
+        }));
+        while (Vector2.Distance(player.transform.position, playerCamera.transform.position) > .1f)
+        {
+            playerCamera.transform.position = Vector3.Lerp(playerCamera.transform.position, new Vector3(player.transform.position.x, player.transform.position.y, -10f),
+                Time.deltaTime * 10f);
+            yield return 0;
+        }
+
+        yield return StartCoroutine(druidConver.ConversationRoutine(new string[] {
+        "Vas a necesitar la ayuda de algunos espíritus",
+        "Ellos te proporcionarán la fuerza que necesitas para recorrer los distintos biomas de esta nuestra isla",
+        "Para ello, solo tienes que conjurar el hechizo \"Capturar Espíritu\" sobre cualquier criatura de las manadas salvajes que encuentres",
+        "Después de capturarlos, puedes ir al pueblo más cercano y agregarlo a tu arsenal de espíritus",
+        "Eso es todo lo que puedo decirte por ahora",
+        "Embarca en tu viaje, permanece siempre cerca de un pueblo, y ten mucho cuidado"
+        }));
+        SaveGame.currentSave.tutorials[0] = true;
+        SaveGame.Save();
+    }
     public NavPath GetPath(MapTileScript _destination)
     {
         List<MapTileScript> pathTiles = new List<MapTileScript>();
@@ -221,6 +297,12 @@ public class OverworldController : MonoBehaviour
 
         GameController.Instance.turnCount = _maxTurn;
         GameController.Instance.randomEncounterPool = pool;
+        GameController.Instance.bossFight = null;
+        StartCoroutine(RandomEncounterAnimation());
+    }
+    public void BossFight(string _bossID)
+    {
+        GameController.Instance.bossFight = new CardInstance(_bossID);
         StartCoroutine(RandomEncounterAnimation());
     }
     public IEnumerator RandomEncounterAnimation()
@@ -312,7 +394,10 @@ public class OverworldController : MonoBehaviour
         currentTown = _town;
         map.gameObject.SetActive(false);
         town.gameObject.SetActive(true);
+        SaveGame.currentSave.playerHP = new int[] { 20, 20 };
+        SaveGame.currentSave.lastTown = SaveGame.currentSave.towns[_town].index;
         town.SetTown(_town);
+        playerCamera.enabled = false;
     }
     public void ExitTown()
     {
@@ -320,6 +405,7 @@ public class OverworldController : MonoBehaviour
         map.gameObject.SetActive(true);
         town.gameObject.SetActive(false);
         SaveGame.Save();
+        playerCamera.enabled = true;
     }
     public void RestockTowns()
     {

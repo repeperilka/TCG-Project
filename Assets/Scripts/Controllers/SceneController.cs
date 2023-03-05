@@ -20,10 +20,13 @@ public class SceneController : MonoBehaviour
             case 1:
                 StartCoroutine(OverworldController.Instance.StartScene());
                 break;
+            case 3:
+                break;
             default:
                 break;
         }
     }
+
     public void LoadScene(int _sceneIndex)
     {
         SceneManager.LoadScene(_sceneIndex);

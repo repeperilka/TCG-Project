@@ -118,6 +118,10 @@ public class TownController : MonoBehaviour
     {
         deckPanel.gameObject.SetActive(true);
         DeckPanelController.Instance.UpdatePanels();
+        if (!SaveGame.currentSave.tutorials[3])
+        {
+            OverworldController.Instance.deckBuildingTutorial.gameObject.SetActive(true);
+        }
     }
     public void CloseDeckBuilderPanel()
     {

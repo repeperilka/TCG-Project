@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   randomEncounterPool:
+    biomeName: 
+    mainBiome: 0
     biome: 4
     commonIDs:
     - cat
@@ -56,6 +58,10 @@ MonoBehaviour:
     - battle_bear
     mythicIDs:
     - dragon
+  bossFight:
+    cardID: 
+    instanceID: 0
+    value: 0
   turnCount: 0
   sceneController: {fileID: 6960545800539085142}
   randomEncounterCapture: {fileID: 0}
@@ -72,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creatures:
-  - cardName: Cat
+  - cardName: Gato
     cardID: cat
     cost: 1
     price: 100
@@ -87,36 +93,37 @@ MonoBehaviour:
       goesToStack: 0
     sprite: {fileID: 21300000, guid: c94a8d3a11c47404f93a652a994715b1, type: 3}
     possibleMorphs:
-    - name: +1 Defense
+    - name: +1 Defensa
       cost: 0
-      description: +1 Defense.
+      description: +1 Defensa.
       effectID: self_defense_add 1
       trigger: OnSetup
       goesToStack: 0
-    - name: Stray
+    - name: Callejero
       cost: 0
-      description: Cat costs 1 less.
+      description: Gato cuesta 1 menos.
       effectID: self_reduce_cost 1
       trigger: OnSetup
       goesToStack: 0
     - name: +1 Attack
       cost: 0
-      description: +1 Attack.
+      description: +1 ataque.
       effectID: self_attack_add 1
       trigger: OnSetup
       goesToStack: 0
     attack: 0
     defense: 1
-  - cardName: Dog
+  - cardName: Perro
     cardID: dog
     cost: 1
-    price: 150
+    price: 200
     rarity: 1
     type: 0
     habilities:
     - name: Add Defense
       cost: 0
-      description: Whenever Dog enters the battlefield, target creature gets +1 defense.
+      description: Cuando Perro entre en el campo de batalla, el objetivo gana +1
+        defensa.
       effectID: effect_defense_add 1
       trigger: OnThisEnter
       goesToStack: 1
@@ -130,22 +137,22 @@ MonoBehaviour:
       goesToStack: 1
     - name: +1 Attack
       cost: 0
-      description: +1 Attack
+      description: +1 ataque.
       effectID: self_attack_add 1
       trigger: OnSetup
       goesToStack: 1
     - name: Helping Paw
       cost: 3
-      description: '3: Draw a card'
+      description: '3: Roba 1 carta.'
       effectID: effect_draw 1
       trigger: Active
       goesToStack: 1
     attack: 1
     defense: 1
-  - cardName: Battle Bear
+  - cardName: Oso de Guerra
     cardID: battle_bear
     cost: 3
-    price: 200
+    price: 400
     rarity: 2
     type: 0
     habilities: []
@@ -159,22 +166,22 @@ MonoBehaviour:
       goesToStack: 0
     - name: +1 Attack
       cost: 0
-      description: +1 Attack
+      description: +1 ataque.
       effectID: self_attack_add 1
       trigger: OnSetup
       goesToStack: 0
     - name: +2 Defense
       cost: 0
-      description: +2 Defense
+      description: +2 defensa.
       effectID: self_defense_add 2
       trigger: OnSetup
       goesToStack: 0
     attack: 4
     defense: 3
-  - cardName: Dragon
+  - cardName: "Drag\xF3n"
     cardID: dragon
     cost: 6
-    price: 300
+    price: 600
     rarity: 3
     type: 0
     habilities:
@@ -206,14 +213,14 @@ MonoBehaviour:
       goesToStack: 1
     - name: Treasure Hoard
       cost: 0
-      description: Whenever Dragon enters, it gets +1 Attack for each 10.000 gold
-        you own.
+      description: "Cuando Drag\xF3n entre en el campo de batalla, obtiene +1 ataque
+        por cada 10.000 oro que tengas."
       effectID: effect_dragon_morph_3
       trigger: OnThisEnter
       goesToStack: 1
     attack: 5
     defense: 4
-  - cardName: Desert Critters
+  - cardName: "Alima\xF1as del Desierto"
     cardID: desert_critters
     cost: 3
     price: 200
@@ -249,56 +256,113 @@ MonoBehaviour:
       goesToStack: 1
     - name: Treasure Hoard
       cost: 0
-      description: Whenever Dragon enters, it gets +1 Attack for each 10.000 gold
-        you own.
-      effectID: effect_dragon_morph_3
+      description: "Cuando las Alima\xF1as del Desierto entre en juego, todas las
+        critaturas llamadas Alima\xF1as del Desierto obtienen +1 ataque y +1 defensa
+        hasta el siguiente turno."
+      effectID: effect_desert_critters_buff
       trigger: OnThisEnter
       goesToStack: 1
-    attack: 1
-    defense: 1
+    attack: 2
+    defense: 2
+  - cardName: Vermin
+    cardID: vermin
+    cost: 10
+    price: 6000
+    rarity: 3
+    type: 0
+    habilities:
+    - name: MultiStrike
+      cost: 0
+      description: Vermin ataca a 3 oponentes adicionales aleatorios cada turno.
+      effectID: effect_boss_1
+      trigger: OnAttack
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: d94e18d10c4855b46ab7bb918f224ffd, type: 3}
+    possibleMorphs:
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 1
+    - name: 
+      cost: 0
+      description: 
+      effectID: 
+      trigger: 
+      goesToStack: 0
+    attack: 2
+    defense: 30
   spells:
-  - cardName: Knoledge
+  - cardName: Conocimiento
     cardID: knoledge
     cost: 1
-    price: 150
+    price: 200
     rarity: 0
     type: 1
     habilities:
     - name: Knoledge
       cost: 0
-      description: Draw 1 card.
+      description: Roba 1 carta.
       effectID: effect_draw 1
       trigger: 
       goesToStack: 1
     sprite: {fileID: 21300000, guid: c01b7f836b4d2054ea9b4c93475ccd38, type: 3}
-  - cardName: Fireball
+  - cardName: Bola de Fuego
     cardID: fireball
-    cost: 1
-    price: 150
+    cost: 2
+    price: 200
     rarity: 0
     type: 1
     habilities:
     - name: Fireball
       cost: 0
-      description: Deal 3 damage.
+      description: "Hace 4 de da\xF1o al objetivo."
       effectID: effect_damage 3
       trigger: 
       goesToStack: 1
     sprite: {fileID: 21300000, guid: de7c6c8135694eb4db418a45916a6c27, type: 3}
-  - cardName: Trap
+  - cardName: Trampa
     cardID: trap
-    cost: 1
-    price: 300
+    cost: 2
+    price: 400
     rarity: 1
     type: 1
     habilities:
     - name: Trap
       cost: 0
-      description: Capture target creature whose attack is lesser than 2
-      effectID: effect_capture_attack 4
+      description: Captura la criatura objetivo cuyo ataque sea menor o igual a 2.
+      effectID: effect_capture_attack 2
       trigger: 
       goesToStack: 1
     sprite: {fileID: 21300000, guid: b5fa6d04760e434439229ca61e7c341e, type: 3}
+  - cardName: "Capturar Esp\xEDritu"
+    cardID: capture_spirit
+    cost: 3
+    price: 600
+    rarity: 2
+    type: 1
+    habilities:
+    - name: "Capturar Esp\xEDritu"
+      cost: 0
+      description: "Captura el esp\xEDritu de la criatura objetivo cuya defensa sea
+        igual o menor que 2."
+      effectID: effect_capture_defense 2
+      trigger: 
+      goesToStack: 1
+    sprite: {fileID: 21300000, guid: db0cff055e815ac4781db867daee867f, type: 3}
 --- !u!114 &6960545800539085142
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,6 +46,7 @@ public class MatchController : MonoBehaviour
     public Image transitionOverworld;
 
     public bool continueToOverworld;
+    public bool bossFight = false;
 
     #region Singleton
     public static MatchController Instance { get; private set; }
@@ -120,8 +121,21 @@ public class MatchController : MonoBehaviour
     public IEnumerator GameCycle()
     {
         PlayerDeckMatch.Instance.Draw(7);
-        while (SaveGame.currentSave.playerHP[0] > 0 && 
-            !(BoardController.Instance.EmptySlotsCount(new SlotType[]{ SlotType.EnemyBackSlot, SlotType.EnemyFrontSlot }) == 10 && turnCount >= GameController.Instance.turnCount))
+        if(GameController.Instance.bossFight != null)
+        {
+            CardScript boss = GameController.Instance.InstantiateCard(GameController.Instance.bossFight, new Vector3(0, 10f, 0), 1);
+            yield return StartCoroutine(BoardController.Instance.enemyBackSlots[2].SetHeldCard((CreatureScript)boss));
+            bossFight = true;
+        }
+        else
+        {
+            yield return StartCoroutine(NextTurn());
+        }
+
+        while (
+            SaveGame.currentSave.playerHP[0] > 0 && 
+            !(BoardController.Instance.EmptySlotsCount(new SlotType[]{ SlotType.EnemyBackSlot, SlotType.EnemyFrontSlot }) == 10)
+            )
         {
             while (stack.Count != 0)
             {
@@ -323,6 +337,8 @@ public class MatchController : MonoBehaviour
         {
             SaveGame.currentSave.gold -= 100;
         }
+        SaveGame.currentSave.playerPosition = SaveGame.currentSave.lastTown;
+        SaveGame.currentSave.playerHP = new int[] { 20, 20 };
         yield return StartCoroutine(EndMatch(defeatPanel, defeatCardHolder));
     }
     public IEnumerator EndMatch(GameObject _panel, Transform _cardsParent)
@@ -376,13 +392,15 @@ public class MatchController : MonoBehaviour
             yield return StartCoroutine(AttackAnimation(attackerSlots[i], defender[i]));
         }
 
+        if(turnOwner == 1)
+            GetTriggers("OnAttack", SlotType.EnemyFrontSlot);
 
         yield return 0;
     }
     public IEnumerator DestroyCreature(SlotScript _slot)
     {
         if(_slot.owner == SlotType.EnemyFrontSlot || _slot.owner == SlotType.EnemyBackSlot)
-            StartCoroutine(AddMoney(Mathf.RoundToInt(_slot.heldCard.cardClass.price * .4f)));
+            StartCoroutine(AddMoney(Mathf.RoundToInt(_slot.heldCard.cardClass.price * .1f)));
         PlayAudio(MatchAudio.DieCreature);
         yield return StartCoroutine(_slot.heldCard.MoveCard(new Vector3(_slot.transform.position.x + .5f, _slot.transform.position.y, _slot.transform.position.z), 20f, "Board", 1));
         yield return StartCoroutine(_slot.heldCard.MoveCard(new Vector3(_slot.transform.position.x - .5f, _slot.transform.position.y, _slot.transform.position.z), 20f, "Board", 1));
@@ -643,7 +661,8 @@ public class MatchController : MonoBehaviour
                 }
             }
             //spawns cards on the back
-            if(turnCount <= GameController.Instance.turnCount)
+
+            if(turnCount <= GameController.Instance.turnCount && !bossFight)
             {
                 for (int i = 0; i < BoardController.Instance.enemyBackSlots.Count; i++)
                 {
@@ -653,7 +672,7 @@ public class MatchController : MonoBehaviour
                     string newCardID = GameController.Instance.GetCardFromPool();
                     Debug.Log("NextTurn: Instantiating " + newCardID);
                     newCard = GameController.Instance.InstantiateCard(newCardID, BoardController.Instance.enemyBackSlots[i].transform.position, 1);
-                    StartCoroutine(BoardController.Instance.enemyBackSlots[i].SetHeldCard((CreatureScript)newCard));
+                    yield return StartCoroutine(BoardController.Instance.enemyBackSlots[i].SetHeldCard((CreatureScript)newCard));
                 }
             }
         }
@@ -831,7 +850,7 @@ public class MatchController : MonoBehaviour
             List<Hability> triggers = slots[i].heldCard.ActivateTriggers(_trigger);
             for(int e = 0; e < triggers.Count; e++)
             {
-                AddStackCard(triggers[i], slots[i].heldCard, true);
+                AddStackCard(triggers[e], slots[i].heldCard, true);
             }
         }
     }

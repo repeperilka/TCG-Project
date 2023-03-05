@@ -110,7 +110,7 @@ public class DeckPanelController : MonoBehaviour
                         SaveGame.RemoveCardFromInventory(heldcard.card.cardInstance);
                         break;
                 }
-                SaveGame.currentSave.gold += heldcard.card.cardClass.price;
+                SaveGame.currentSave.gold += Mathf.RoundToInt(heldcard.card.cardClass.price * .4f);
                 break;
         }
         UpdatePanels();

@@ -142,6 +142,41 @@ public class effect_capture_attack : Effect
     }
 }
 [System.Serializable]
+public class effect_capture_defense : Effect
+{
+    public int amount;
+    public effect_capture_defense(int _maxDefense) : base(new string[] { "1 slot EnemyFrontSlot Any 0 -1 " + _maxDefense.ToString() + " -1" })
+    {
+        amount = _maxDefense;
+    }
+    public override IEnumerator Execute(CardScript _owner, StackCardScript _this)
+    {
+        SlotScript selectedSlot = (SlotScript)targets[0];
+        if (selectedSlot.heldCard == null)
+        {
+            selectedSlot.SetTrap(_this);
+        }
+        else
+        {
+            if (selectedSlot.heldCard.defense <= amount)
+            {
+                CreatureScript creature = selectedSlot.heldCard;
+                yield return MatchController.Instance.StartCoroutine(MatchController.Instance.CaptureCreature(selectedSlot));
+                Debug.Log("Effect(" + _owner.cardClass.cardName + ", " + _owner.owner + "): " + creature.creature.cardName + " has been captured!");
+            }
+            else
+            {
+                Debug.Log("Effect(" + _owner.cardClass.cardName + ", " + _owner.owner + "): The creature broke it's shackles");
+            }
+        }
+        yield return 0;
+    }
+    public override Effect Copy()
+    {
+        return new effect_capture_defense(amount);
+    }
+}
+[System.Serializable]
 public class effect_move_empty : Effect
 {
     public effect_move_empty() : base(new string[] { "1 slot PlayerSlot Empty Any"}) { }
@@ -228,6 +263,26 @@ public class effect_dragon_morph_3 : Effect
     public override Effect Copy()
     {
         return new effect_dragon_morph_3();
+    }
+}
+[System.Serializable]
+public class effect_boss_1 : Effect
+{
+    public effect_boss_1() : base(new string[] {  }) { }
+    public override IEnumerator Execute(CardScript _owner, StackCardScript _this)
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            int randomSlot = Random.Range(0, 5);
+            _owner.holderGameObject.GetComponent<SlotScript>().RemoveCard();
+            yield return BoardController.Instance.StartCoroutine(BoardController.Instance.enemyFrontSlots[randomSlot].SetHeldCard((CreatureScript)_owner));
+            yield return BoardController.Instance.StartCoroutine(MatchController.Instance.AttackAnimation(BoardController.Instance.enemyFrontSlots[randomSlot], BoardController.Instance.playerSlots[randomSlot]));
+        }
+        yield return 0;
+    }
+    public override Effect Copy()
+    {
+        return new effect_boss_1();
     }
 }
 
